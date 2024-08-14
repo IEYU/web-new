@@ -4,12 +4,12 @@ import Navbar from "../Components/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Wrapper from "../assets/wrappers/Skills";
+import TerminalDisplay from "../Components/TerminalDisplay";
 
 const Skills = () => {
 	const toastShown = useRef(false);
 
-	const notify = () =>
-		toast("Haven't figured out what to put here yet :( Come back later!");
+	const notify = () => toast("More might get added :D");
 
 	useEffect(() => {
 		if (!toastShown.current) {
@@ -22,8 +22,8 @@ const Skills = () => {
 		<Wrapper>
 			<Navbar />
 			<ToastContainer
-				position="top-center"
-				autoClose={5000}
+				position="bottom-right"
+				autoClose={3000}
 				hideProgressBar={false}
 				newestOnTop={false}
 				closeOnClick
@@ -34,7 +34,9 @@ const Skills = () => {
 				theme="light"
 				transition:Bounce
 			/>
-			<div className="placeholder" />
+			<div className="placeholder">
+				<TerminalDisplay />
+			</div>
 			<Footer
 				text={
 					"Higher and higher you chase it. It's deep in your bones, go and take it."
