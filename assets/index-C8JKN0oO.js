@@ -366,17 +366,13 @@ Error generating stack: `+o.message+`
 	}
 
 	.tab-bar {
-		flex: 1 1 auto;
+		flex: 15;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 3rem;
-		flex-wrap: nowrap;
 		/* padding-top: 0.8rem;
 		padding-bottom: 0.8rem; */
-		padding-left: 20%;
-		padding-right: 20%;
-		box-sizing: border-box;
 	}
 
 	.icon-bar {
