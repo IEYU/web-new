@@ -27,7 +27,6 @@ const Wrapper = styled.section`
 		justify-content: center;
 		align-items: center;
 		gap: 3rem;
-		flex-wrap: wrap;
 		/* padding-top: 0.8rem;
 		padding-bottom: 0.8rem; */
 	}
