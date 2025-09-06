@@ -14,6 +14,8 @@ import edtutor from "../assets/images/project/edtutor.jpeg";
 import robo from "../assets/images/project/robo.jpg";
 import jobify from "../assets/images/project/jobify.svg";
 import todolist from "../assets/images/project/todolist.png";
+import display from "../assets/images/project/display.png";
+import awt from "../assets/images/project/awt.png";
 
 import Wrapper from "../assets/wrappers/ProjectSlider";
 
@@ -79,6 +81,25 @@ const ProjectSlider = (props) => {
 				autoPlay
 			>
 				<SlideCard
+					img={awt}
+					link={
+						"https://github.com/HAKUZ-Y/Parallel_AWT?tab=readme-ov-file"
+					}
+					text={"Parallel 2D Adaptive Wavelet Transformation"}
+				/>
+				<SlideCard
+					img={display}
+					link={
+						"https://ieyu.github.io/2025/05/22/POV-LED-Display-Build18-2025/"
+					}
+					text={"3D Volumetric Hologram"}
+				/>
+				<SlideCard
+					img={abtech}
+					link={"https://abtech.org/"}
+					text={"Event Planning and Entertainment Production!"}
+				/>
+				<SlideCard
 					img={todolist}
 					link={"https://github.com/IEYU/TodoList-Demo"}
 					text={"Todoist-style To-Do List (React Native + Expo)"}
@@ -86,17 +107,12 @@ const ProjectSlider = (props) => {
 				<SlideCard
 					img={jobify}
 					link={"https://github.com/IEYU/Jobify"}
-					text={"Job Tracking App (MERN Stack)"}
-				/>
-				<SlideCard
-					img={notepad}
-					link={"https://github.com/IEYU/notepad_extension"}
-					text={"Notepad Chrome Extension"}
+					text={"Tracking Web App (learning MERN Stack)"}
 				/>
 				<SlideCard
 					img={doggie}
 					link={"https://github.com/IEYU/Doggie"}
-					text={"Doggie (Animal Hack 2024)"}
+					text={"Pet Management App (learning Swift)"}
 				/>
 				<SlideCard
 					img={uccmodule}
@@ -106,28 +122,9 @@ const ProjectSlider = (props) => {
 					text={"UCC x Module Consulting Project"}
 				/>
 				<SlideCard
-					img={ai4all}
-					link={
-						"https://sites.google.com/view/ai4allcomputervision/home"
-					}
-					text={"AI4ALL Real-Time Facial Emotion Recognition Project"}
-				/>
-				<SlideCard
-					img={abtech}
-					link={"https://abtech.org/"}
-					text={"Event Planning and Entertainment Production!"}
-				/>
-				<SlideCard
 					img={robo}
 					link={"https://github.com/IEYU/2020-2021-Change-Up.git"}
 					text={"VEX Robotics Change Up Season Team 1010X"}
-				/>
-				<SlideCard
-					img={edtutor}
-					link={"https://devpost.com/software/edtutor"}
-					text={
-						"TecHacks 2.0 Education Track Learning Platform Project"
-					}
 				/>
 			</Carousel>
 		</Wrapper>

@@ -68,7 +68,7 @@ const Footer = ({ text }) => {
 
 			{/* Signature */}
 			<div className="signature">
-				<p>© 2024 Maggie Gong. All Rights Reserved</p>
+				<p>© 2025 Maggie Gong. All Rights Reserved</p>
 			</div>
 		</FooterWrapper>
 	);

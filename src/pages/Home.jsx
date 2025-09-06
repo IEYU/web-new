@@ -12,6 +12,15 @@ import star from "../assets/images/star.png";
 import blog from "../assets/images/blog.png";
 import GithubCorner from "react-github-corner";
 import AnimatedCursor from "react-animated-cursor";
+import { toast } from "react-toastify";
+
+const notifyBlogDown = () =>
+	toast.info(
+		"🚧 Blog is currently under maintenance. Please check back soon!",
+		{
+			theme: "dark",
+		}
+	);
 
 const Home = () => {
 	return (

@@ -20,7 +20,7 @@ const Navbar = () => {
 	return (
 		<Wrapper>
 			{/* brand image */}
-			<Link to={"../"}>
+			<Link to={"../"} className="brand">
 				<img src={snoopy} className="navbar-brand" alt="snoopy" />
 			</Link>
 			{/* tab buttons */}

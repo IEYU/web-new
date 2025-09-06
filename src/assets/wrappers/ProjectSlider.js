@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Wrapper = styled.section`
 	display: flex;
 	flex-direction: column;
-	height: 100vh; /* Full height of the viewport */
+	height: fit-content; // Full height of the viewport
 
 	.slider-container {
 		flex: 1; /* Allow the slider container to take up all available vertical space */
