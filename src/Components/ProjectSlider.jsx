@@ -1,12 +1,9 @@
 import SlideCard from "./SlideCard";
 
 // image imports
-import doggie from "../assets/images/project/jumpingdog.jpg";
 import uccmodule from "../assets/images/project/module.png";
 import abtech from "../assets/images/project/abtech.jpeg";
 import robo from "../assets/images/project/robo.jpg";
-import jobify from "../assets/images/project/jobify.svg";
-import todolist from "../assets/images/project/todolist.png";
 import display from "../assets/images/project/display.png";
 import awt from "../assets/images/project/awt.png";
 
