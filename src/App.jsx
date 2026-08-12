@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomeLayout, About, Error, Home, Portfolio, Skills } from "./pages";
 
 //add the checking in App.js instead of dashboard so that the setting can be applied to all the child pages
-export const checkDefaultTheme = () => {
+const checkDefaultTheme = () => {
 	const isDarkTheme = localStorage.getItem("darkTheme") === "true";
 	document.body.classList.toggle("dark-theme", isDarkTheme);
 	return isDarkTheme;

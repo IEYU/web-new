@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
 import Wrapper from "../assets/wrappers/SocialMediaIcon";
-import { FaGithub } from "react-icons/fa6";
 
 const SocialMediaIcon = ({ icon: Icon, link }) => {
 	return (
 		<Wrapper>
-			<Link to={link} target="blank" className="icon-container">
+			<a
+				href={link}
+				target="_blank"
+				rel="noreferrer"
+				className="icon-container"
+			>
 				<Icon className={"icon"} />
-			</Link>
+			</a>
 		</Wrapper>
 	);
 };

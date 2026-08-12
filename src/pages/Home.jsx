@@ -1,5 +1,4 @@
 import coins from "../assets/images/coins.png";
-import mushroom from "../assets/images/mushroom.png";
 import mushroom2 from "../assets/images/mushroom2.png";
 import carnivorousPlant from "../assets/images/carnivorous-plant.png";
 import HomeIcon from "../Components/HomeIcon";
@@ -12,15 +11,6 @@ import star from "../assets/images/star.png";
 import blog from "../assets/images/blog.png";
 import GithubCorner from "react-github-corner";
 import AnimatedCursor from "react-animated-cursor";
-import { toast } from "react-toastify";
-
-const notifyBlogDown = () =>
-	toast.info(
-		"🚧 Blog is currently under maintenance. Please check back soon!",
-		{
-			theme: "dark",
-		}
-	);
 
 const Home = () => {
 	return (
@@ -43,22 +33,22 @@ const Home = () => {
 
 			<GithubCorner
 				href="https://github.com/IEYU"
-				target="blank"
+				target="_blank"
 				octoColor="#fcfbf7"
 			/>
 			<img src={name} alt="Name" className="title" />
 			<div className="icon-row">
-				<HomeIcon img={coins} text={portfolio} linkto="portfolio" />
-				<HomeIcon img={mushroom2} text={about} linkto="about" />
+				<HomeIcon img={coins} text={portfolio} linkto="/portfolio" />
+				<HomeIcon img={mushroom2} text={about} linkto="/about" />
 				<HomeIcon
 					img={carnivorousPlant}
 					text={skills}
-					linkto="skills"
+					linkto="/skills"
 				/>
 				<HomeIcon
 					img={star}
 					text={blog}
-					externalLink={"https://blog.maggie-gong.com"}
+					externalLink={"https://ieyu.github.io"}
 				/>
 			</div>
 		</Wrapper>

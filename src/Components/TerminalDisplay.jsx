@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import cursor1 from "../assets/images/marioCursor2Smaller.png";
 import cursor2 from "../assets/images/marioCursorSmaller.png";
@@ -19,7 +19,6 @@ import {
 import { FaRaspberryPi } from "react-icons/fa";
 import { FcLinux } from "react-icons/fc";
 import {
-	SiOpencv,
 	SiFlask,
 	SiRubyonrails,
 	SiExpress,

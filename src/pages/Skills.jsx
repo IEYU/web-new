@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import { ToastContainer, toast } from "react-toastify";
@@ -32,7 +32,6 @@ const Skills = () => {
 				draggable
 				pauseOnHover
 				theme="light"
-				transition:Bounce
 			/>
 			<div className="placeholder">
 				<TerminalDisplay />

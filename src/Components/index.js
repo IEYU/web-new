@@ -1,2 +1,2 @@
-import {dafault as Navbar} from "./Navbar";
-import {dafault as Footer} from "./Footer";
+export { default as Navbar } from "./Navbar";
+export { default as Footer } from "./Footer";

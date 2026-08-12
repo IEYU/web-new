@@ -1,50 +1,69 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
+	height: 100%;
+
 	.card {
-		height: 20rem;
-		width: 20rem;
-		border: 0;
-		border-radius: 40px;
-		box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.2);
+		min-height: 100%;
+		width: 100%;
+		background: #fdfbf0;
+		border: 2px solid #2a272a;
+		border-radius: 20px;
+		box-shadow: 0 4px 0 #2a272a;
 		position: relative;
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden; /* Ensure content stays within the card boundaries */
+		flex-direction: column;
+		overflow: hidden;
+		text-decoration: none;
+		transition:
+			transform 0.16s ease,
+			box-shadow 0.16s ease,
+			background-color 0.16s ease;
 	}
 
 	.card-img-top {
 		width: 100%;
-		height: 100%;
-		border-radius: 40px;
-		position: absolute; /* Make the image fixed in place */
-		top: 0;
-		left: 0;
-		transition: opacity 0.2s ease; /* Smooth transition for opacity */
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		background: #fffbea;
+		border-bottom: 2px solid #2a272a;
 	}
 
 	.card-hover-text {
-		background: none;
-		visibility: hidden;
-		position: absolute;
-		top: 45%;
-		left: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 5.25rem;
+		margin: 0;
+		padding: 0.85rem;
 		text-align: center;
-		transform: translate(-50%, -50%);
 		font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
 			sans-serif;
-		font-size: 1.7rem;
+		font-size: clamp(1rem, 1.7vw, 1.2rem);
+		line-height: 1.2;
+		font-weight: 700;
 		color: #2a272a;
-		width: 80%;
 	}
 
-	.card:hover .card-img-top {
-		opacity: 0.15;
+	.card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 7px 0 #2a272a;
 	}
 
-	.card:hover .card-hover-text {
-		visibility: visible;
+	&:nth-child(4n + 1) .card:hover {
+		background: #8abfd1;
+	}
+
+	&:nth-child(4n + 2) .card:hover {
+		background: #f4d77e;
+	}
+
+	&:nth-child(4n + 3) .card:hover {
+		background: #eaa09a;
+	}
+
+	&:nth-child(4n) .card:hover {
+		background: #b8d88f;
 	}
 `;
 

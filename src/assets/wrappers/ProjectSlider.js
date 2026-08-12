@@ -1,24 +1,21 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-	display: flex;
-	flex-direction: column;
-	height: fit-content; // Full height of the viewport
+	width: min(1120px, calc(100% - 2rem));
+	margin: 0 auto;
+	padding: clamp(1rem, 3vw, 2.5rem) 0;
 
-	.slider-container {
-		flex: 1; /* Allow the slider container to take up all available vertical space */
-		width: 80%;
-		margin: auto;
-		padding-left: 5%;
-		padding-right: 5%;
+	.portfolio-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr));
+		gap: clamp(1rem, 2vw, 1.45rem);
+		align-items: stretch;
 	}
 
-	.slick-slide h3 {
-		color: white;
-		padding: 40px;
-		text-align: center;
-		border-radius: 10px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	@media (min-width: 1120px) {
+		.portfolio-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
 	}
 `;
 
