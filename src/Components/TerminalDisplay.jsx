@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import cursor1 from "../assets/images/marioCursor2Smaller.png";
-import cursor2 from "../assets/images/marioCursorSmaller.png";
 import {
 	DiReact,
 	DiNodejsSmall,
@@ -35,10 +33,7 @@ const bounceAnimation = {
 };
 
 const AnimatedIcon = styled(motion.div)`
-	font-size: 5rem;
-	/* cursor: ${(props) =>
-		props.isHovered ? `url(${cursor1}), auto` : `url(${cursor2}), auto`};
-	transition: cursor 0.2s ease-in-out; */
+	font-size: clamp(3rem, 7vw, 4.5rem);
 `;
 
 const IconList = () => {

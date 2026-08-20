@@ -10,11 +10,12 @@ const Wrapper = styled.section`
 		cursor: url(${cursor2}) 24 24, auto;
 	} */
 	cursor: none;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	height: 98vh;
+	justify-content: space-between;
+	min-height: 100dvh;
 	text-align: center;
 	overflow: hidden;
 	&::before {
@@ -34,19 +35,28 @@ const Wrapper = styled.section`
 	z-index: 1;
 
 	.title {
-		width: 90%; /* Adjust width as needed */
+		display: block;
+		width: 90vw;
 		height: auto;
-		/* margin-bottom: 20px; Space between title and icons */
-		margin-top: 17rem;
-		margin-bottom: auto;
+		position: absolute;
+		top: 42.5%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	.icon-row {
 		display: flex;
-		gap: 7rem; /* Space between icons */
-		justify-content: center; /* Center icons horizontally */
-		margin-top: auto; // Push icons to the bottom of the viewport
-		margin-bottom: 3rem; /* Space from the bottom of the viewport */
+		gap: clamp(2rem, 8vw, 7rem);
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: auto auto clamp(2rem, 7vh, 5rem);
+		width: min(92vw, 920px);
+	}
+
+	@media (max-width: 640px) {
+		.title {
+			width: min(96vw, 900px);
+		}
 	}
 
 	nav {

@@ -1,5 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HomeLayout, About, Error, Home, Portfolio, Skills } from "./pages";
+import {
+	HomeLayout,
+	About,
+	Error,
+	Home,
+	Portfolio,
+	Recently,
+	Skills,
+} from "./pages";
 
 //add the checking in App.js instead of dashboard so that the setting can be applied to all the child pages
 const checkDefaultTheme = () => {
@@ -32,6 +40,10 @@ const router = createBrowserRouter([
 			{
 				path: "skills",
 				element: <Skills />,
+			},
+			{
+				path: "recently",
+				element: <Recently />,
 			},
 		],
 	},

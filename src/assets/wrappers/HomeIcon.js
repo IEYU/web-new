@@ -10,26 +10,42 @@ const Wrapper = styled.section`
 		border-radius: 20%;
 		overflow: hidden;
 		text-align: center;
-		transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-		position: relative; /* Ensure positioning context for absolute children */
+		position: relative;
+	}
+
+	.home-img,
+	.home-text {
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		object-fit: contain;
+		transition: opacity 0.08s ease-out;
+		will-change: opacity;
 	}
 
 	.home-img {
 		width: auto;
-		height: 100%;
-		height: 100px;
-		transition: opacity 0.3s ease; /* Smooth transition for image opacity */
+		height: min(100%, 100px);
+		opacity: 1;
 	}
 
 	.home-text {
-		height: auto;
 		width: 100%;
-		bottom: -20px; /* Position text below the container */
-		transition: color 0.3s ease; /* Smooth transition for text color */
+		height: auto;
+		opacity: 0;
+	}
+
+	.home-text.recently-text {
+		width: 114%;
+		transform: translateY(0.3rem);
+	}
+
+	.home-icon-container:hover .home-img {
+		opacity: 0;
 	}
 
 	.home-icon-container:hover .home-text {
-		color: black; /* Change text color on hover */
+		opacity: 1;
 	}
 `;
 

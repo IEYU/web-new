@@ -5,19 +5,14 @@ const Wrapper = styled.section`
 		height: 2rem;
 		width: 2rem;
 		display: flex;
-		border-radius: 20%;
+		border-radius: 50%;
 		transition: background-color 0.2s ease;
 		justify-content: center;
 		align-items: center;
 	}
 
 	.icon-container:hover {
-		background-color: rgba(
-			249,
-			249,
-			249,
-			0.15
-		); /* Change background to frosted glass effect */
+		background-color: rgba(255, 255, 255, 0.22);
 	}
 	.icon {
 		width: 60%;

@@ -9,7 +9,9 @@ const About = () => {
 		<Wrapper>
 			<Navbar />
 			<div className="content-container">
-				<img src={selfie} className="img-fluid" alt="Selfie" />
+				<div className="photo-card">
+					<img src={selfie} className="img-fluid" alt="Selfie" />
+				</div>
 				<div className="text-content">
 					<Bio />
 				</div>

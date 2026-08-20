@@ -5,7 +5,7 @@ import HomeIcon from "../Components/HomeIcon";
 import Wrapper from "../assets/wrappers/Home";
 import name from "../assets/images/name.png";
 import portfolio from "../assets/images/portfolio.png";
-import skills from "../assets/images/skills.png";
+import recently from "../assets/images/recently.png";
 import about from "../assets/images/about.png";
 import star from "../assets/images/star.png";
 import blog from "../assets/images/blog.png";
@@ -16,17 +16,18 @@ const Home = () => {
 	return (
 		<Wrapper>
 			<AnimatedCursor
-				innerSize={8}
-				outerSize={35}
+				innerSize={7}
+				outerSize={22}
 				innerScale={1}
-				outerScale={2}
+				outerScale={1.35}
 				outerAlpha={0}
+				trailingSpeed={5}
 				hasBlendMode={true}
 				innerStyle={{
 					backgroundColor: "var(--cursor-color)",
 				}}
 				outerStyle={{
-					border: "3px solid var(--cursor-color)",
+					border: "2px solid var(--cursor-color)",
 				}}
 			/>
 			{/* <MouseTrail strokeColor={"#e72d12"} lineWidthStart={5} lag={0.7} /> */}
@@ -42,8 +43,9 @@ const Home = () => {
 				<HomeIcon img={mushroom2} text={about} linkto="/about" />
 				<HomeIcon
 					img={carnivorousPlant}
-					text={skills}
-					linkto="/skills"
+					text={recently}
+					textClassName="recently-text"
+					linkto="/recently"
 				/>
 				<HomeIcon
 					img={star}

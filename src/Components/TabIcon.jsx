@@ -1,7 +1,14 @@
 import { NavLink } from "react-router-dom";
 import Wrapper from "../assets/wrappers/TabIcon";
 
-const TabIcon = ({ img1, img2, link, externalLink }) => {
+const TabIcon = ({ image, label, link, externalLink }) => {
+	const content = (
+		<>
+			<img src={image} className="tab-pikmin" alt="" aria-hidden="true" />
+			<span>{label}</span>
+		</>
+	);
+
 	if (externalLink) {
 		return (
 			<Wrapper>
@@ -11,7 +18,7 @@ const TabIcon = ({ img1, img2, link, externalLink }) => {
 					target="_blank"
 					rel="noreferrer"
 				>
-					<img src={img1} className="icon" alt="" />
+					{content}
 				</a>
 			</Wrapper>
 		);
@@ -26,13 +33,7 @@ const TabIcon = ({ img1, img2, link, externalLink }) => {
 				}
 				end /* This ensures that only exact matches are active */
 			>
-				{({ isActive }) => (
-					<img
-						src={isActive ? img2 : img1}
-						className="icon"
-						alt=""
-					/>
-				)}
+				{content}
 			</NavLink>
 		</Wrapper>
 	);

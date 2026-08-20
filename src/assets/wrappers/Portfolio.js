@@ -1,14 +1,26 @@
 import styled from "styled-components";
-import cursor1 from "../images/marioCursor2Smaller.png";
-import cursor2 from "../images/marioCursorSmaller.png";
+import backgroundImage from "../images/zelda.jpg";
+import cursor1 from "../images/marioCursor2Smaller32.png";
+import cursor2 from "../images/marioCursorSmaller32.png";
 
 const Wrapper = styled.section`
-	cursor: url(${cursor2}) 18 18, auto;
-	min-height: 100dvh;
-	background: #fcfbf7;
+	cursor:
+		url(${cursor2}) 16 16,
+		none;
+	height: 100dvh;
+	overflow: hidden;
+	background:
+		linear-gradient(rgba(255, 253, 247, 0.5), rgba(255, 253, 247, 0.9)),
+		url(${backgroundImage});
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 
-	a:hover {
-		cursor: url(${cursor1}) 18 18, auto;
+	a,
+	button {
+		cursor:
+			url(${cursor1}) 16 16,
+			none;
 	}
 	display: flex;
 	flex-direction: column;
@@ -23,6 +35,7 @@ const Wrapper = styled.section`
 
 	> *:nth-child(2) {
 		flex: 1;
+		min-height: 0;
 	}
 `;
 

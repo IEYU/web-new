@@ -1,127 +1,116 @@
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-	flex: 1 1 5.8rem;
 	display: flex;
 	justify-content: center;
-	min-width: 5.2rem;
 
 	.icon-container {
-		height: 3.35rem;
-		width: min(100%, 6.25rem);
+		height: 2.8rem;
+		width: auto;
 		display: flex;
 		transition:
-			transform 0.16s ease,
-			background-color 0.16s ease,
+			color 0.16s ease,
 			box-shadow 0.16s ease;
 		justify-content: center;
 		align-items: center;
-		border-radius: 16px;
+		border-radius: 11px;
 		position: relative;
-		padding: 0.45rem 0.65rem;
-		background: #8abfd1;
-		border: 2px solid #2a272a;
-		box-shadow: 0 3px 0 #2a272a;
+		gap: 0.4rem;
+		padding: 0.2rem 0.9rem 0.2rem 0.55rem;
+		background: transparent;
+		border: 0;
+		box-shadow: none;
 		box-sizing: border-box;
+		font-family: var(--font-sans);
+		font-size: 0.86rem;
+		font-weight: 720;
+		letter-spacing: 0.01em;
+		color: var(--ink-muted);
+		text-decoration: none;
+		overflow: hidden;
+	}
+
+	.tab-pikmin {
+		position: relative;
+		z-index: 1;
+		width: 1.55rem;
+		height: 2.35rem;
+		flex: 0 0 auto;
+		object-fit: contain;
+		mix-blend-mode: multiply;
+		transform-origin: center;
+		transition: transform 0.18s ease;
+	}
+
+	.icon-container:hover .tab-pikmin,
+	.icon-container:focus-visible .tab-pikmin,
+	.icon-container.active .tab-pikmin {
+		transform: scale(1.12);
+	}
+
+	.icon-container span {
+		position: relative;
+		z-index: 1;
+		white-space: nowrap;
 	}
 
 	.icon-container.active,
 	.icon-container:hover {
-		background: #f4d77e;
-		transform: translateY(-3px);
-		box-shadow: 0 5px 0 #2a272a;
-	}
-
-	.icon-container.external:hover {
-		background: #eaa09a;
-		box-shadow: 0 5px 0 #2a272a;
-	}
-
-	&:nth-child(4n + 1) .icon-container.active,
-	&:nth-child(4n + 1) .icon-container:hover {
-		background: #8abfd1;
-	}
-
-	&:nth-child(4n + 2) .icon-container.active,
-	&:nth-child(4n + 2) .icon-container:hover {
-		background: #f4d77e;
-	}
-
-	&:nth-child(4n + 3) .icon-container.active,
-	&:nth-child(4n + 3) .icon-container:hover {
-		background: #eaa09a;
-	}
-
-	&:nth-child(4n) .icon-container.active,
-	&:nth-child(4n) .icon-container:hover {
-		background: #b8d88f;
-	}
-
-	&:nth-child(4n + 1) .icon-container.active::after,
-	&:nth-child(4n + 1) .icon-container:hover::after {
-		background: #8abfd1;
-	}
-
-	&:nth-child(4n + 2) .icon-container.active::after,
-	&:nth-child(4n + 2) .icon-container:hover::after {
-		background: #f4d77e;
-	}
-
-	&:nth-child(4n + 3) .icon-container.active::after,
-	&:nth-child(4n + 3) .icon-container:hover::after {
-		background: #eaa09a;
-	}
-
-	&:nth-child(4n) .icon-container.active::after,
-	&:nth-child(4n) .icon-container:hover::after {
-		background: #b8d88f;
+		color: var(--ink);
+		box-shadow: 0 8px 18px rgba(37, 34, 42, 0.08);
 	}
 
 	.icon-container::before {
 		content: "";
 		position: absolute;
-		top: 0.45rem;
-		left: 0.7rem;
-		width: 0.42rem;
-		height: 0.42rem;
-		border-radius: 50%;
-		background: rgba(255, 255, 255, 0.75);
+		inset: 0;
+		z-index: 0;
+		border-radius: inherit;
+		opacity: 0;
+		transform: scaleX(0.86);
+		transform-origin: center;
+		transition:
+			opacity 0.16s ease,
+			transform 0.16s ease;
 	}
 
 	.icon-container::after {
-		content: "";
-		position: absolute;
-		left: 50%;
-		bottom: -0.72rem;
-		width: 0.52rem;
-		height: 0.52rem;
-		border-right: 2px solid #2a272a;
-		border-bottom: 2px solid #2a272a;
-		background: #f4d77e;
-		transform: translateX(-50%) rotate(45deg) scale(0);
-		transition: transform 0.16s ease;
+		content: none;
 	}
 
-	.icon-container.active::after {
-		transform: translateX(-50%) rotate(45deg) scale(1);
+	.icon-container.active::before,
+	.icon-container:hover::before {
+		opacity: 1;
+		transform: scaleX(1);
 	}
 
-	.icon {
-		width: 96%;
-		height: 92%;
-		object-fit: contain;
-		filter: drop-shadow(0 1px 0 rgba(42, 39, 42, 0.24));
+	&:nth-child(1) .icon-container::before {
+		background: rgba(244, 215, 103, 0.45);
+	}
+
+	&:nth-child(2) .icon-container::before {
+		background: rgba(239, 146, 135, 0.42);
+	}
+
+	&:nth-child(3) .icon-container::before {
+		background: rgba(172, 217, 133, 0.44);
+	}
+
+	&:nth-child(4) .icon-container::before {
+		background: rgba(121, 191, 211, 0.42);
 	}
 
 	@media (max-width: 760px) {
-		flex: 1 1 4.2rem;
-		min-width: 3.8rem;
-
 		.icon-container {
-			width: min(100%, 4.7rem);
-			height: 2.85rem;
-			border-radius: 14px;
-			padding: 0.38rem 0.5rem;
+			height: 2.55rem;
+			gap: 0.3rem;
+			padding: 0.15rem 0.5rem 0.15rem 0.3rem;
+			font-size: 0.74rem;
+		}
+
+		.tab-pikmin {
+			width: 1.2rem;
+			height: 2rem;
 		}
 	}
 `;

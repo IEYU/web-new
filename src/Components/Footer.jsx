@@ -7,30 +7,27 @@ const FooterWrapper = styled.footer`
 	position: relative;
 	isolation: isolate;
 	text-align: center;
-	color: #2a272a;
-	background: linear-gradient(135deg, #fffbea, #f6e4ae);
-	border-top: 2px solid #2a272a;
-	box-shadow:
-		0 -3px 0 rgba(216, 174, 92, 0.72),
-		0 -10px 22px rgba(42, 39, 42, 0.1);
-	padding: 1.4rem clamp(1rem, 4vw, 3rem) 1rem;
+	color: var(--ink);
+	background: linear-gradient(
+		135deg,
+		rgba(250, 244, 228, 0.9),
+		rgba(255, 251, 242, 0.94)
+	);
+	border-top: 1px solid var(--line);
+	box-shadow: 0 -12px 32px rgba(37, 34, 42, 0.07);
+	backdrop-filter: blur(18px) saturate(1.2);
+	-webkit-backdrop-filter: blur(18px) saturate(1.2);
+	padding: 1.15rem clamp(1rem, 4vw, 3rem) 0.9rem;
 
 	&::before {
-		content: "";
-		position: absolute;
-		inset: 0.55rem;
-		z-index: -1;
-		border: 1px dashed rgba(42, 39, 42, 0.28);
-		border-radius: 18px;
-		pointer-events: none;
+		content: none;
 	}
 
 	.signature {
-		font-size: 0.82rem;
-		font-weight: 700;
+		font-size: 0.78rem;
+		font-weight: 650;
 		letter-spacing: 0;
-		color: rgba(42, 39, 42, 0.82);
-		opacity: 1;
+		color: var(--ink-muted);
 	}
 
 	.signature p {
@@ -40,17 +37,17 @@ const FooterWrapper = styled.footer`
 	.icon-bar {
 		justify-content: center;
 		display: flex;
-		gap: 0.85rem;
-		margin-bottom: 0.9rem;
+		gap: 0.75rem;
+		margin-bottom: 0.85rem;
 	}
 
 	.icon-bar .icon-container {
-		width: 2.9rem;
-		height: 2.9rem;
-		background: #8abfd1;
-		border: 2px solid #2a272a;
+		width: 2.6rem;
+		height: 2.6rem;
+		background: rgba(121, 191, 211, 0.82);
+		border: 1px solid rgba(37, 34, 42, 0.16);
 		border-radius: 50%;
-		box-shadow: 0 3px 0 #2a272a;
+		box-shadow: 0 10px 22px rgba(37, 34, 42, 0.1);
 		transition:
 			transform 0.16s ease,
 			background-color 0.16s ease,
@@ -58,25 +55,25 @@ const FooterWrapper = styled.footer`
 	}
 
 	.icon-bar .icon-container:hover {
-		background: #eaa09a;
+		background: var(--red);
 		transform: translateY(-3px);
-		box-shadow: 0 5px 0 #2a272a;
+		box-shadow: 0 15px 28px rgba(37, 34, 42, 0.14);
 	}
 
 	.icon-bar > :nth-child(4n + 1) .icon-container:hover {
-		background: #8abfd1;
+		background: var(--blue);
 	}
 
 	.icon-bar > :nth-child(4n + 2) .icon-container:hover {
-		background: #f4d77e;
+		background: var(--yellow);
 	}
 
 	.icon-bar > :nth-child(4n + 3) .icon-container:hover {
-		background: #eaa09a;
+		background: var(--red);
 	}
 
 	.icon-bar > :nth-child(4n) .icon-container:hover {
-		background: #b8d88f;
+		background: var(--green);
 	}
 
 	.icon-bar .icon {
@@ -88,7 +85,7 @@ const FooterWrapper = styled.footer`
 	.quote {
 		display: flex;
 		justify-content: center;
-		margin: 0 auto 1.1rem;
+		margin: 0 auto 1rem;
 		max-width: 58rem;
 		padding: 0 clamp(0.25rem, 2vw, 1rem);
 	}

@@ -1,14 +1,17 @@
-import { useState } from "react";
 import "../index.css";
 import { Link } from "react-router-dom";
 import Wrapper from "../assets/wrappers/HomeIcon";
 
-const HomeIcon = ({ img, text, linkto, externalLink }) => {
-	const [isHovered, setIsHovered] = useState(false);
-	const content = isHovered ? (
-		<img src={text} alt="" className="home-text" />
-	) : (
-		<img src={img} alt="" className="home-img" />
+const HomeIcon = ({ img, text, textClassName = "", linkto, externalLink }) => {
+	const content = (
+		<>
+			<img src={img} alt="" className="home-img" />
+			<img
+				src={text}
+				alt=""
+				className={`home-text ${textClassName}`.trim()}
+			/>
+		</>
 	);
 
 	if (externalLink) {
@@ -19,8 +22,6 @@ const HomeIcon = ({ img, text, linkto, externalLink }) => {
 					className="home-icon-container"
 					target="_blank"
 					rel="noreferrer"
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}
 				>
 					{content}
 				</a>
@@ -33,8 +34,6 @@ const HomeIcon = ({ img, text, linkto, externalLink }) => {
 			<Link
 				to={linkto}
 				className="home-icon-container"
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
 			>
 				{content}
 			</Link>
