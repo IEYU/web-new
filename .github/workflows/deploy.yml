@@ -16,6 +16,9 @@ jobs:
     build:
         name: Build
         runs-on: ubuntu-latest
+        env:
+            VITE_SANITY_PROJECT_ID: igfmzmp5
+            VITE_SANITY_DATASET: production
 
         steps:
             - name: Checkout repo

@@ -17,6 +17,8 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+src/assets/images/stm.png/
+src/assets/images/Overcooked2-screenshot-map.jpg
 *.suo
 *.ntvs*
 *.njsproj

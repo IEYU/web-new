@@ -17,7 +17,7 @@ const Wrapper = styled.section`
 		);
 		border: 0;
 		border-radius: 20px;
-		box-shadow: 0 10px 24px rgba(37, 34, 42, 0.08);
+		box-shadow: none;
 		backdrop-filter: blur(12px) saturate(1.25);
 		-webkit-backdrop-filter: blur(12px) saturate(1.25);
 		padding: 0;
@@ -31,7 +31,6 @@ const Wrapper = styled.section`
 		transform: translateZ(0);
 		transition:
 			transform 0.16s ease,
-			box-shadow 0.16s ease,
 			background-color 0.16s ease;
 	}
 
@@ -169,7 +168,7 @@ const Wrapper = styled.section`
 
 	.card:hover {
 		transform: translateY(-4px);
-		box-shadow: var(--shadow-lift);
+		box-shadow: none;
 		background: rgba(255, 255, 255, 0.72);
 	}
 

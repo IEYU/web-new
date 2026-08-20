@@ -6,11 +6,29 @@ import Wrapper from "../assets/wrappers/ProjectSlider";
 import SlideCard from "./SlideCard";
 
 const PROJECTS_PER_PAGE = 8;
-const PLACEHOLDER_PROJECTS = Array.from({ length: 4 }, (_, index) => ({
-	_id: `placeholder-${index + 1}`,
-	title: "Coming soon",
-	isPlaceholder: true,
-}));
+const PROJECT_ORDER = [
+	(title) => title.includes("pebbles") && title.includes("kernel"),
+	(title) => title.includes("rtos") && title.includes("kernel"),
+	(title) => title.includes("3d") && title.includes("volumetric"),
+	(title) => title.includes("parallel") && title.includes("2d"),
+	(title) => title.includes("raft"),
+	(title) => title.includes("vlsi"),
+	(title) =>
+		title.includes("event") &&
+		(title.includes("planning") || title.includes("planner")),
+];
+
+const normalizeTitle = (title = "") =>
+	title
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, " ")
+		.trim();
+
+const getProjectOrder = (project) => {
+	const title = normalizeTitle(project.title);
+	const order = PROJECT_ORDER.findIndex((matches) => matches(title));
+	return order === -1 ? PROJECT_ORDER.length : order;
+};
 
 const ProjectSlider = () => {
 	const [projects, setProjects] = useState(null);
@@ -30,7 +48,10 @@ const ProjectSlider = () => {
 				if (isCurrent) setProjects(data);
 			})
 			.catch((fetchError) => {
-				console.error("Unable to load portfolio projects from Sanity.", fetchError);
+				console.error(
+					"Unable to load portfolio projects from Sanity.",
+					fetchError,
+				);
 				if (isCurrent) setError(fetchError);
 			});
 
@@ -43,7 +64,9 @@ const ProjectSlider = () => {
 	if (error) {
 		return (
 			<Wrapper>
-				<p className="portfolio-status">Projects are temporarily unavailable.</p>
+				<p className="portfolio-status">
+					Projects are temporarily unavailable.
+				</p>
 			</Wrapper>
 		);
 	}
@@ -56,7 +79,14 @@ const ProjectSlider = () => {
 		);
 	}
 
-	const displayedProjects = [...projects, ...PLACEHOLDER_PROJECTS];
+	const displayedProjects = projects
+		.map((project, originalIndex) => ({ project, originalIndex }))
+		.sort(
+			(a, b) =>
+				getProjectOrder(a.project) - getProjectOrder(b.project) ||
+				a.originalIndex - b.originalIndex,
+		)
+		.map(({ project }) => project);
 	const projectPages = [];
 	for (
 		let index = 0;
@@ -72,7 +102,10 @@ const ProjectSlider = () => {
 		const scroller = scrollerRef.current;
 		if (!scroller) return;
 
-		const nextPage = Math.max(0, Math.min(projectPages.length - 1, pageIndex));
+		const nextPage = Math.max(
+			0,
+			Math.min(projectPages.length - 1, pageIndex),
+		);
 		const target = nextPage * scroller.clientWidth;
 
 		scrollAnimation.current?.stop();
@@ -108,7 +141,9 @@ const ProjectSlider = () => {
 		if (Math.abs(accumulatedScroll.current) < 55) return;
 
 		const scroller = scrollerRef.current;
-		const currentPage = Math.round(scroller.scrollLeft / scroller.clientWidth);
+		const currentPage = Math.round(
+			scroller.scrollLeft / scroller.clientWidth,
+		);
 		const direction = Math.sign(accumulatedScroll.current);
 		const nextPage = Math.max(
 			0,
@@ -152,15 +187,24 @@ const ProjectSlider = () => {
 				<p className="portfolio-status">Projects coming soon.</p>
 			)}
 			{projectPages.length > 1 && (
-				<div className="page-indicator" aria-label="Project group navigation">
+				<div
+					className="page-indicator"
+					aria-label="Project group navigation"
+				>
 					{projectPages.map((page, pageIndex) => (
 						<button
 							type="button"
-							className={pageIndex === currentPage ? "page-dot active" : "page-dot"}
+							className={
+								pageIndex === currentPage
+									? "page-dot active"
+									: "page-dot"
+							}
 							key={page[0]?._id || pageIndex}
 							onClick={() => scrollToPage(pageIndex)}
 							aria-label={`Show project group ${pageIndex + 1}`}
-							aria-current={pageIndex === currentPage ? "page" : undefined}
+							aria-current={
+								pageIndex === currentPage ? "page" : undefined
+							}
 						/>
 					))}
 				</div>

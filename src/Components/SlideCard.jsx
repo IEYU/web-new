@@ -1,7 +1,13 @@
 import Wrapper from "../assets/wrappers/SlideCard";
 import { urlFor } from "../sanity/image";
 
-const SlideCard = ({ image, isPlaceholder = false, technologies = [], title, url }) => {
+const SlideCard = ({
+	image,
+	isPlaceholder = false,
+	technologies = [],
+	title,
+	url,
+}) => {
 	const projectTechnologies = Array.isArray(technologies) ? technologies : [];
 	const imageUrl = image
 		? urlFor(image)
@@ -11,6 +17,10 @@ const SlideCard = ({ image, isPlaceholder = false, technologies = [], title, url
 				.auto("format")
 				.url()
 		: null;
+	const CardElement = url ? "a" : "article";
+	const cardProps = url
+		? { href: url, target: "_blank", rel: "noreferrer" }
+		: {};
 
 	return (
 		<Wrapper>
@@ -24,10 +34,10 @@ const SlideCard = ({ image, isPlaceholder = false, technologies = [], title, url
 					</div>
 				</div>
 			) : (
-				<a href={url} className="card" target="_blank" rel="noreferrer">
+				<CardElement className="card" {...cardProps}>
 					<img
 						src={imageUrl}
-						alt={image.alt || title}
+						alt={image?.alt || title}
 						className="card-img-top"
 						loading="lazy"
 						width="800"
@@ -48,7 +58,7 @@ const SlideCard = ({ image, isPlaceholder = false, technologies = [], title, url
 							<span className="skills-fallback">Details coming soon</span>
 						)}
 					</div>
-				</a>
+				</CardElement>
 			)}
 		</Wrapper>
 	);
