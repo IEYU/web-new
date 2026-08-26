@@ -5,15 +5,11 @@ const Wrapper = styled.section`
 	grid-template-columns: 4.1rem minmax(0, 1fr) 4.1rem;
 	position: relative;
 	isolation: isolate;
-	background: linear-gradient(
-		135deg,
-		rgba(250, 244, 228, 0.9),
-		rgba(255, 251, 242, 0.94)
-	);
+	background: transparent;
 	border-bottom: 0;
-	box-shadow: 0 10px 28px rgba(37, 34, 42, 0.07);
-	backdrop-filter: blur(18px) saturate(1.2);
-	-webkit-backdrop-filter: blur(18px) saturate(1.2);
+	box-shadow: none;
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
 	min-height: 4.85rem;
 	padding: 0.45rem clamp(0.85rem, 2.5vw, 2.1rem);
 	align-items: center;
@@ -77,12 +73,12 @@ const Wrapper = styled.section`
 		gap: clamp(0.18rem, 0.55vw, 0.4rem);
 		padding: 0.2rem;
 		box-sizing: border-box;
-		background: rgba(255, 255, 255, 0.46);
-		border: 1px solid rgba(255, 255, 255, 0.76);
+		background: transparent;
+		border: 0;
 		border-radius: 14px;
-		box-shadow: 0 8px 22px rgba(37, 34, 42, 0.06);
-		backdrop-filter: blur(14px) saturate(1.2);
-		-webkit-backdrop-filter: blur(14px) saturate(1.2);
+		box-shadow: none;
+		backdrop-filter: none;
+		-webkit-backdrop-filter: none;
 		max-width: 100%;
 	}
 

@@ -57,7 +57,7 @@ const Wrapper = styled.section`
 	.icon-container.active,
 	.icon-container:hover {
 		color: var(--ink);
-		box-shadow: 0 8px 18px rgba(37, 34, 42, 0.08);
+		box-shadow: none;
 	}
 
 	.icon-container::before {

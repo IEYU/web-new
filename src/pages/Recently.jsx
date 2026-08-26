@@ -19,7 +19,7 @@ const recentLists = [
 		title: "Books",
 		accent: "blue",
 		color: "#79bfd3",
-		position: { x: 18, y: 79.5 },
+		position: { x: 29.4, y: 72.7 },
 		icon: FaBookOpen,
 		items: ["have not been reading a lot recently :("],
 	},
@@ -27,7 +27,7 @@ const recentLists = [
 		title: "Movies",
 		accent: "yellow",
 		color: "#f4d767",
-		position: { x: 28, y: 34.5 },
+		position: { x: 37.9, y: 45.3 },
 		icon: FaFilm,
 		items: [
 			"Spider-Man: Brand New Day",
@@ -40,7 +40,7 @@ const recentLists = [
 		title: "Music",
 		accent: "red",
 		color: "#ef9287",
-		position: { x: 53.5, y: 51.8 },
+		position: { x: 57.4, y: 52.8 },
 		icon: FaHeadphonesAlt,
 		items: [
 			"日落 - 孙燕姿",
@@ -53,7 +53,7 @@ const recentLists = [
 		title: "Musicals",
 		accent: "green",
 		color: "#acd985",
-		position: { x: 57.5, y: 21.5 },
+		position: { x: 59, y: 31.1 },
 		icon: FaTheaterMasks,
 		sections: [
 			{
@@ -80,7 +80,7 @@ const recentLists = [
 		title: "Games",
 		accent: "purple",
 		color: "#8faad8",
-		position: { x: 82, y: 15.8 },
+		position: { x: 77.8, y: 23.2 },
 		icon: FaGamepad,
 		items: [
 			"The Legend of Zelda: Breath of the Wild",
@@ -171,8 +171,8 @@ const Recently = () => {
 			<Navbar />
 			<main className="recently-content">
 				<header className="recently-heading">
-					<p className="eyebrow">Recently</p>
-					<h1>What I&apos;m up to</h1>
+					<p className="eyebrow">Recently · What I&apos;m up to</p>
+					<h1>Between Small Shores</h1>
 				</header>
 
 				<section className="route-map" aria-label="Recent interests map">

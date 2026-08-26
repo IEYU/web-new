@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import cursor1 from "../images/marioCursor2Smaller32.png";
 import cursor2 from "../images/marioCursorSmaller32.png";
-import mapBackground from "../images/recently-map-bg.png";
+import mapBackground from "../images/recently-map-editorial.png";
 
 const Wrapper = styled.section`
 	cursor:
@@ -11,7 +11,7 @@ const Wrapper = styled.section`
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	background: #dce8e2;
+	background: #f7f2e8;
 
 	a,
 	button {
@@ -37,25 +37,28 @@ const Wrapper = styled.section`
 		left: clamp(1rem, 5vw, 4.5rem);
 		z-index: 5;
 		flex: 0 0 auto;
-		max-width: 42rem;
+		max-width: min(42rem, 72vw);
 		margin: 0;
-		text-shadow: 0 1px 3px rgba(248, 252, 244, 0.82);
 	}
 
 	.eyebrow {
-		margin: 0 0 0.35rem;
-		color: var(--ink-muted);
-		font-size: 0.78rem;
-		font-weight: 800;
-		letter-spacing: 0.08em;
+		margin: 0 0 0.45rem;
+		color: #687b5a;
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.13em;
 		text-transform: uppercase;
 	}
 
 	h1 {
 		margin: 0;
-		color: #263b33;
-		font-size: clamp(1.9rem, 3.4vw, 2.9rem);
-		line-height: 1;
+		color: #34523b;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(2rem, 3.6vw, 3.2rem);
+		font-style: italic;
+		font-weight: 400;
+		letter-spacing: -0.035em;
+		line-height: 0.96;
 	}
 
 	.route-map {
@@ -66,7 +69,7 @@ const Wrapper = styled.section`
 		width: 100%;
 		margin: 0;
 		overflow: hidden;
-		background: #a8d9dc;
+		background: #f7f2e8;
 	}
 
 	.route-map::before {
@@ -74,8 +77,7 @@ const Wrapper = styled.section`
 		position: absolute;
 		inset: -1px;
 		z-index: 0;
-		background: url(${mapBackground}) center / 100% 100% no-repeat;
-		filter: saturate(0.68) contrast(0.92) brightness(1.05);
+		background: url(${mapBackground}) center / 112% 112% no-repeat;
 	}
 
 	.route-map::after {
@@ -84,7 +86,7 @@ const Wrapper = styled.section`
 		inset: 0;
 		z-index: 1;
 		pointer-events: none;
-		background: rgba(239, 246, 239, 0.12);
+		background: transparent;
 	}
 
 	.route-terminal {
@@ -113,9 +115,9 @@ const Wrapper = styled.section`
 	}
 
 	.route-start {
-		left: 5.5%;
-		top: 94%;
-		transform: translate(-10%, -100%);
+		left: 17.5%;
+		top: 85.8%;
+		transform: translate(-50%, -50%);
 	}
 
 	.route-start svg {
